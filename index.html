@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Cumbres Unimet</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <h1>Iniciar Sesión</h1>
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Correo electrónico" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    <div class="social-login">
+      <button id="google-login">
+        <img src="../assets/icons/google-icon.png" alt="Google Icon"> Iniciar Sesión con Google
+      </button>
+      <button id="facebook-login">
+        <img src="../assets/icons/facebook-icon.png" alt="Facebook Icon"> Iniciar Sesión con Facebook
+      </button>
+    </div>
+    <p id="error-message" class="error"></p>
+  </div>
+</body>
+</html>
+
