@@ -1,4 +1,3 @@
-// src/components/Login.jsx
 import React, { useState } from 'react';
 import { auth, googleProvider, facebookProvider } from '../firebase';
 
