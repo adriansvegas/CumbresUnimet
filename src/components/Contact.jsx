@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// ste componente proporciona un formulario de contacto para que los usuarios envíen mensajes.
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

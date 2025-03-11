@@ -2,6 +2,8 @@
 import React, { useState } from 'react'; 
 import Booking from './Booking'; // Importamos el componente Booking
 
+//Este componente representa una tarjeta de destino que muestra información sobre un destino específico y permite a los usuarios realizar una reserva.
+
 const Destinations = () => {
   const [destinoSeleccionado, setDestinoSeleccionado] = useState(null);
 
@@ -10,6 +12,11 @@ const Destinations = () => {
 =======
 import React from 'react';
 import PropTypes from 'prop-types';
+
+/**
+ * Este componente muestra una lista de destinos de excursión y permite a los usuarios
+ * seleccionar un destino para realizar una reserva.
+ */
 
 const DestinationCard = ({ destination }) => {
   return (

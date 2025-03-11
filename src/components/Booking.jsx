@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-
+// * Este componente permite a los usuarios realizar reservas para una excursión específica.
 const Booking = ({ destination }) => {
   const [date, setDate] = useState('');
   const [participants, setParticipants] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
+  
+  //Este componente representa el modal de confirmación.
   const Modal = ({ isOpen, onClose, message }) => {
     if (!isOpen) return null;
   /////FIXME - 
@@ -22,7 +24,7 @@ const Booking = ({ destination }) => {
       </div>
     );
   };
-  
+  // Maneja la lógica de reservas.
   const manejarReservas = () => {
     if (!date) {
       alert('Por favor selecciona una fecha.');
@@ -41,6 +43,7 @@ const Booking = ({ destination }) => {
     setDate('');
     setParticipants(1);
   };
+
 
   const closeModal = () => {
     setIsModalOpen(false);
