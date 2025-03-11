@@ -12,15 +12,7 @@ const Destinations = () => {
       duration: '3 horas',
       pointsOfInterest: ['Mirador de la Guaira', 'Cascada de los Cuentos'],
       image: 'ruta-el-avila.jpg',
-    },
-    {
-      name: 'Cerro Autana',
-      difficulty: 'Alta',
-      duration: '5 horas',
-      pointsOfInterest: ['Punto Panorámico', 'Río Autana'],
-      image: 'cerro-autana.jpg',
-    },
-    // Agrega más destinos según sea necesario
+    }
   ];
 
   const manejarClickReservar = (destino) => {
