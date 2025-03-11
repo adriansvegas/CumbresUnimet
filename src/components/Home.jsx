@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Este componente es 
+// Este componente es la pagina principal de proyecto
 const Home = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
