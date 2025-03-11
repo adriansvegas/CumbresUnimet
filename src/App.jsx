@@ -8,6 +8,7 @@ import Destinations from './components/Destinations';
 import Info from './components/Info';
 import Contact from './components/Contact';
 import Booking from './components/Booking';
+import Auth from './auth';
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Auth />} />
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/info" element={<Info />} />
         <Route path="/contact" element={<Contact />} />
