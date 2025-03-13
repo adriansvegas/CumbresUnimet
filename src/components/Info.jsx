@@ -1,5 +1,5 @@
 import React from 'react';
-
+// Este componente proporciona informacion básica
 const Info = () => {
   return (
     <div className="p-8 bg-gray-100">
