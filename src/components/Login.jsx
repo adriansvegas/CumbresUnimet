@@ -30,20 +30,21 @@ const Login = () => {
     }
   }
 
-
-  const handleLogin = async () => {
-    /*setLoading(true);
+  const handleLogin = async (emaillogin, Passwordlogin) => {
+    
     try {
-      await signInWithPopup(auth, provider);
+      console.log(emaillogin, Passwordlogin);
+    const responsefirebase = await signInWithEmailAndPassword(auth, emaillogin, Passwordlogin);
+    console.log(responsefirebase);
+    alert('Inicio de sesion correcto');
+      
+    } catch (error) {
+      alert(error.message);
+    }
+  }
 
-      navigate('/'); 
 
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    } /*/
-  };
+  
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
@@ -90,11 +91,11 @@ const Login = () => {
 
         <button 
           className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200"
-          onClick={() => handleLogin(googleProvider)}
+          onClick={() => handleLogin(emaillogin, Passwordlogin)}
 
 
         >
-          Iniciar con Google
+          Iniciar Sesion
         </button>
         <button 
           className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition duration-200 mt-2"
