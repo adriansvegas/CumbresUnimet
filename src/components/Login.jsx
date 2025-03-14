@@ -1,8 +1,11 @@
 // src/components/Login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
-import { auth, googleProvider, facebookProvider } from '../firebase';
+import  {auth}  from '../firebase';
+
+// import { auth, googleProvider} from '../firebase';
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -14,13 +17,22 @@ const Login = () => {
 
   const [error, setError] = useState(null);
 
-  function handleRegister(emailregister, passwordregister) {
-    console.log(emailregister, passwordregister);
+  const handleRegister = async (emailregister, passwordregister) => {
+    
+    try {
+      console.log(emailregister, passwordregister);
+    const responsefirebase = await createUserWithEmailAndPassword(auth, emailregister, passwordregister);
+    console.log(responsefirebase);
+    alert('Usuario creado con exito');
+      
+    } catch (error) {
+      alert(error.message);
+    }
   }
 
 
-  const handleLogin = async (provider) => {
-    setLoading(true);
+  const handleLogin = async () => {
+    /*setLoading(true);
     try {
       await signInWithPopup(auth, provider);
 
@@ -30,7 +42,7 @@ const Login = () => {
       setError(err.message);
     } finally {
       setLoading(false);
-    }
+    } /*/
   };
 
   return (
