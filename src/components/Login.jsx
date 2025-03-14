@@ -6,10 +6,18 @@ import { auth, googleProvider, facebookProvider } from '../firebase';
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [emaillogin, setEmaillogin] = useState('');
+  const [Passwordlogin, setPasswordlogin] = useState('');
+  const [emailregister, setEmailregister]= useState('');
+  const [passwordregister, setPasswordregister] = useState('');
+  
 
   const [error, setError] = useState(null);
+
+  function handleRegister(emailregister, passwordregister) {
+    console.log(emailregister, passwordregister);
+  }
+
 
   const handleLogin = async (provider) => {
     setLoading(true);
@@ -32,15 +40,16 @@ const Login = () => {
         <input 
           type="email" 
           placeholder="Email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
+          value={emaillogin} 
+          onChange={(e) => setEmaillogin(e.target.value)} 
           className="w-full p-2 border border-gray-300 rounded mb-2"
         />
+
         <input 
           type="password" 
           placeholder="Contraseña" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
+          value={Passwordlogin} 
+          onChange={(e) => setPasswordlogin(e.target.value)} 
           className="w-full p-2 border border-gray-300 rounded mb-2"
         />
 
@@ -49,20 +58,20 @@ const Login = () => {
         <input 
           type="email" 
           placeholder="Email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
+          value={emailregister} 
+          onChange={(e) => setEmailregister(e.target.value)} 
           className="w-full p-2 border border-gray-300 rounded mb-2"
         />
         <input 
           type="password" 
           placeholder="Contraseña" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
+          value={passwordregister} 
+          onChange={(e) => setPasswordregister(e.target.value)} 
           className="w-full p-2 border border-gray-300 rounded mb-2"
         />
         <button 
           className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition duration-200 mt-2"
-          onClick={() => handleRegister(email, password)}
+          onClick={() => handleRegister(emailregister, passwordregister)}
         >
           Registrarse
         </button>
