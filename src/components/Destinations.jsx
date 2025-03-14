@@ -1,5 +1,12 @@
 import React, { useState } from 'react'; 
 import Booking from './Booking'; // Importamos el componente Booking
+import defaultImage from '../assets/react.svg'; // Usaremos este como imagen por defecto
+import Sabasnieves from '../assets/sabas-nieves.jpg'; 
+import Humboldt from '../assets/hotel-humboldt.jpg';
+import Cruzavila from '../assets/cruz-avila.jpg';
+import QuebradaChacaito from '../assets/quebrada-chacaito.jpg';
+import Galipan from '../assets/galipan.jpg';
+import Naiguata from '../assets/naiguata.jpg';
 
 //Este componente representa una tarjeta de destino que muestra información sobre un destino específico y permite a los usuarios realizar una reserva.
 
@@ -9,11 +16,46 @@ const Destinations = () => {
   // Lista de destinos
   const destinos = [
     {
-      name: 'Ruta El Ávila',
+      name: 'Ruta La Cruz del Avila',
       difficulty: 'Moderada',
       duration: '3 horas',
       pointsOfInterest: ['Mirador de la Guaira', 'Cascada de los Cuentos'],
-      image: 'ruta-el-avila.jpg',
+      image: Cruzavila,
+    },
+    {
+      name: 'Ruta al Humboldt',
+      difficulty: 'Alta',
+      duration: '6 horas',
+      pointsOfInterest: ['Hotel Humboldt', 'Teleférico Warairarepano'],
+      image: Humboldt,
+    },
+    {
+      name: 'Quebrada de Chacaito',
+      difficulty: 'Moderada',
+      duration: '4 horas',
+      pointsOfInterest: ['Cascada de Chacao', 'Mirador de Chacao'],
+      image: QuebradaChacaito,
+    },
+    {
+      name: 'Sabas Nieves',
+      difficulty: 'Baja',
+      duration: '2 horas',
+      pointsOfInterest: ['Puesto de Guardaparques', 'Mirador Sabas Nieves'],
+      image: Sabasnieves,
+    },
+    {
+      name: 'Galipán',
+      difficulty: 'Moderada',
+      duration: '5 horas',
+      pointsOfInterest: ['Pueblo de Galipán', 'Jardín Botánico'],
+      image: Galipan,
+    },
+    {
+      name: 'Pico Naiguatá',
+      difficulty: 'Alta',
+      duration: '8 horas',
+      pointsOfInterest: ['Cima del Pico Naiguatá', 'Mirador del Caribe'],
+      image: Naiguata,
     }
   ];
 
