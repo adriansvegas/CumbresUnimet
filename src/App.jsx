@@ -7,6 +7,7 @@ import Destinations from './components/Destinations';
 import Info from './components/Info';
 import Contact from './components/Contact';
 import Booking from './components/Booking';
+import Register from './components/Register';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} /> 
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/info" element={<Info />} />
         <Route path="/contact" element={<Contact />} />
