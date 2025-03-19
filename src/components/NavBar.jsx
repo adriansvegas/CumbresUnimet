@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 p-4">
-      <ul className="flex space-x-4">
+    <nav className="bg-orange-500 p-4">
+      <ul className="flex space-x-8">
+      <img src="/src/assets/logo1.jpg" alt="Avila" className="h-10 mr-4" />  
         <li>
           <Link to="/" className="text-white hover:underline">Inicio</Link>
         </li>
@@ -22,6 +23,9 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/register" className="text-white hover:underline">Registrarse</Link>
+        </li>
+        <li>
+          <Link to="/Foro" className="text-white hover:underline">Foro</Link>
         </li>
       </ul>
     </nav>

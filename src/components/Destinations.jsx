@@ -93,7 +93,13 @@ const Destinations = () => {
         <Booking destination={destinoSeleccionado} />
       ) : (
         <>
-          <h1 className="text-3xl font-bold mb-6">Destinos de Excursión</h1>
+          <h1 className="text-3xl text-center font-bold mb-6">Destinos de Excursión</h1>
+          <p className="text-lg text-center mb-4">
+        Promovemos actividades de esparcimiento y recreación en la naturaleza.
+      </p>
+      <p className="text-md text-center mb-8">
+        Únete a nuestras excursiones y descubre la belleza del Parque Nacional El Ávila.
+      </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {destinos.map((destino, index) => (
               <DestinationCard
