@@ -8,6 +8,7 @@ import Info from './components/Info';
 import Contact from './components/Contact';
 import Booking from './components/Booking';
 import Register from './components/Register';
+import Foro from './components/Foro';
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
         <Route path="/info" element={<Info />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/booking/:destinationId" element={<Booking />} />
+        <Route path="/foro" element={<Foro />} />
+        
       </Routes>
     </Router>
   );
