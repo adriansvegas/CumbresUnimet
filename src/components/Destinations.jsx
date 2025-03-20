@@ -19,7 +19,7 @@ const DestinationCard = ({ destination, onReservar }) => {
               <h2 className="text-xl font-semibold">{destination.name}</h2>
               <p>Dificultad: {destination.difficulty}</p>
               <p>Duración: {destination.duration}</p>
-              <p>Puntos de interés: {destination.pointsOfInterest.join(', ')}</p>
+              <p>Puntos de interés: {Array.isArray(destination.pointsOfInterest) ? destination.pointsOfInterest.join(', ') : 'No points of interest available'}</p>
               <Link to={`/info/${destination.id}`} className="info-button">Más información</Link>
               <button
                   onClick={onReservar}
