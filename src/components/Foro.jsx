@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { collection, getDocs, addDoc, doc, query, where, updateDoc} from 'firebase/firestore';
+import db from '../firebase'; // Asegúrate de importar tu instancia de Firebase
+import { useEffect } from 'react';
 
 const Foro = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -7,9 +10,10 @@ const Foro = () => {
   const [publicaciones, setPublicaciones] = useState([]);
   const [respuestas, setRespuestas] = useState({});
 
-  const manejarEnvio = (e) => {
+  const manejarEnvio = async(e) => {
     e.preventDefault();
     const nuevaPublicacion = { id: Date.now(), titulo, texto };
+    const docRef = await addDoc(collection(db, "publicaciones_foro"), nuevaPublicacion);
     setPublicaciones([...publicaciones, nuevaPublicacion]);
     setTitulo('');
     setTexto('');
@@ -25,6 +29,18 @@ const Foro = () => {
   const publicacionesFiltradas = publicaciones.filter(pub =>
     pub.titulo.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  useEffect(() => {
+      const fetchDestinations = async () => {
+        const publicaciones_forocollection = collection(db, 'publicaciones_foro'); // Adjust the collection name as needed
+        const publicaciones_for = await getDocs(publicaciones_forocollection);
+        const publicacioneslist = publicaciones_for.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setPublicaciones(publicacioneslist);
+        console.log(publicacioneslist);
+      };
+  
+      fetchDestinations();
+    }, []);
 
 
   const estilosContainer = {
