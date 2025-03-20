@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Destinations from './Destinations';
 // * Este componente permite a los usuarios realizar reservas para una excursión específica.
 const Booking = ({ destination }) => {
   const [date, setDate] = useState('');
@@ -6,6 +7,8 @@ const Booking = ({ destination }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   
+  console.log (destination);
+
   //Este componente representa el modal de confirmación.
   const Modal = ({ isOpen, onClose, message }) => {
     if (!isOpen) return null;

@@ -11,13 +11,13 @@ const InfoRoutes = () => {
         difficulty: "Moderada",
         duration: "4 horas",
         pointsOfInterest: ["Murallas de Ávila", "Catedral de Ávila", "Plaza del Mercado"],
-        image: "path/to/image.jpg" // Replace with actual image path
+        image: "avila.jpg" // Replace with actual image path
     };
 
     return (
         <div className="info-routes-container">
             <h1 className="route-title">{routeInfo.name}</h1>
-            <img src={routeInfo.image} alt={routeInfo.name} className="route-image" />
+            <img src= {"src/assets/" + routeInfo.image} alt={routeInfo.name} className="route-image" />
             <p className="route-description">{routeInfo.description}</p>
             <p><strong>Dificultad:</strong> {routeInfo.difficulty}</p>
             <p><strong>Duración:</strong> {routeInfo.duration}</p>
